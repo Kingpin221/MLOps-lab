@@ -1,0 +1,38 @@
+name: Vodafone Billing ML Training
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Vodafone ML project
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python libraries
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Train Vodafone billing model
+        run: |
+          python train.py
+
+      - name: Test prediction
+        run: |
+          python predict.py
+
+      - name: Upload trained model
+        uses: actions/upload-artifact@v4
+        with:
+          name: vodafone-billing-model
+          path: billing_model.pkl
