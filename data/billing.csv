@@ -7,3 +7,4 @@ data_gb,voice_minutes,sms_count,international_minutes,bill_amount
 20,600,300,30,110
 25,700,350,40,135
 30,800,400,50,160
+35,900,500,60,200
