@@ -3,10 +3,10 @@ import joblib
 model = joblib.load("billing_model.pkl")
 
 # Example Vodafone customer usage
-data_gb = 14
-voice_minutes = 550
-sms_count = 230
-international_minutes = 24
+data_gb = 20
+voice_minutes = 650
+sms_count = 290
+international_minutes = 16
 
 prediction = model.predict([[
     data_gb,
