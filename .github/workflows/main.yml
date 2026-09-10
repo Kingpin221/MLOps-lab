@@ -3,7 +3,7 @@ name: Vodafone Billing ML Training
 on:
   push:
     branches:
-      - main
+      - master
 
   workflow_dispatch:
 
